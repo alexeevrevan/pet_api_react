@@ -1,0 +1,18 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "compilerOptions": {
+    "target": "es6", // или выше
+    "module": "commonjs", // или "esnext" в зависимости от вашего окружения
+    "jsx": "react", // или "react-jsx" для React 17 и выше
+    "strict": true,
+    // добавьте любые другие необходимые настройки
+  }
+}
