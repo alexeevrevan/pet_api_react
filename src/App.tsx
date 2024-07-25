@@ -10,6 +10,7 @@ import DogForm from "./components/DogForm";
 import {useSelector} from "react-redux";
 import {RootState} from "./reducers";
 import Results from "./components/Results";
+import Loader from './components/Loader';
 
 function App() {
 
@@ -43,12 +44,15 @@ function App() {
 
 
 
+
     useEffect(() => {
         fetchData();
     }, [fetchData, breedState]);
 
+    
     if (isLoading) return <Loader/>
     if (!breedList) return <p>No Dogs Found</p>
+
 
     return (
     <Container>
@@ -64,9 +68,7 @@ function App() {
                 setImages = {setImages}
                 setIsLoading = {setIsLoading}
             />
-
             {imageResultState > 0  && <Results images= {images} />}
-
         </AppBody>
     </Container>
     )
